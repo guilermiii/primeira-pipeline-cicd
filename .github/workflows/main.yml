@@ -20,4 +20,8 @@ jobs:
         context: "./src"
         file: ./src/Dockerfile
         push: true
-        tags: devguina/primeiro-ci-cd-aula:v1
+        tags: |
+          devguina/primeiro-ci-cd-aula:v${{ github.run_number }}
+          devguina/primeiro-ci-cd-aula:latest
+      
+        
