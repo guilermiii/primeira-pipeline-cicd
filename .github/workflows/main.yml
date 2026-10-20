@@ -12,10 +12,8 @@ jobs:
     - name: Docker Login
       uses: docker/login-action@v4.6.0
       with:
-    # Username used to log against the Docker registry
-        username: "devguina"
-    # Password or personal access token used to log against the Docker registry
-        password: "dckr_pat_lGuOQU_12mqgZsxKABi3oxL75_E"
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Build and push
       uses: docker/build-push-action@v7
       with:
